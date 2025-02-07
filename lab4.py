@@ -1,15 +1,5 @@
 import random
 
-list_of_lists = []
-for _ in range(500):
-    sublist_length = random.randint(2, 6)
-    sublist = [random.randint(0, 100) for _ in range(sublist_length)]
-    list_of_lists.append(sublist)
-
-
-
-
-
 
 long_names_list = [
     "alex", "ben", "charles", "david", "edward", "frank", "george", "harry", "isaac", "jack",
@@ -43,7 +33,7 @@ def removevowels(names):
     return names
 
 # Task 1
-print(removevowels(long_names_list))
+#print(removevowels(long_names_list))
 
 
 # Task 2
@@ -57,26 +47,40 @@ def reversestr(str):
 
 
 # Task 2
-print(reversestr("Big Dawg town"))
+#print(reversestr("I am in CSC101"))
 
 
 # Task 3:
-def short_lists(lis):
-    for i in range(len(lis) -1, -1, -1):
-        if len(lis[i]) > 3:
-            del lis[i]
-    return lis
+def short_lists():
+
+    lisout = []
+    lisin =[]
+
+    usernum = int(input("How many lists would you like? "))
+    cond = ''
+    for i in range(usernum):
+        lisout.append(lisin)
+        lisin = []
+        cond = 'n'
+        while cond != 'y':
+            lisin.append(input("Enter a number: "))
+            cond = input("Do you want to move on to a new list? (y/n): ")
 
 
-# Task 3:
-print(short_lists(list_of_lists))
+    for i in range(len(lisout) -1, -1, -1):
+        if len(lisout[i]) > 3 or len(lisout[i]) < 3:
+            del lisout[i]
+    return lisout
 
+
+#Task 3
+# print(short_lists())
 
 
 # Task 4:
 def greater_than_5():
     lis = []
-    res = 0;
+    res = 0
     for i in range(4):
         temp = input("enter a word: ")
         lis.append(temp)
